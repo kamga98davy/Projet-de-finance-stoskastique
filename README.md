@@ -32,7 +32,7 @@ L’évaluation se fera par **deux méthodes principales** :
 
 ---
 
-## 🧮 **Travail demandé**
+## 🧮 **Travail à faire**
 
 ### **1) Formulation mathématique**
 
