@@ -1,4 +1,53 @@
-## **Titre du projet**
+## **PARTIE 1 : Construction de la courbe des taux**
+
+### **Objectif**
+
+Évaluer la **meilleure estimation (best estimate)** de la valeur actuelle d’un portefeuille de contrats d’assurance vie, en utilisant comme taux d’actualisation les **taux zéro-coupon (zero-coupon yields)** des obligations d’État belges (OLOs), au 10/02/2025.
+
+---
+
+## **Étapes de la première partie**
+
+---
+
+### 🔹 1. **Calcul des intérêts courus et du dirty price**
+
+* Utilisation de la **convention "jour réel/jour réel"** (*actual/actual*) pour le calcul des intérêts courus.
+* Objectif : obtenir le **prix "sale"** (*dirty price*) de chaque obligation, c’est-à-dire :
+
+  $$
+  \text{Dirty Price} = \text{Clean Price} + \text{Intérêts courus}
+  $$
+
+📌 **Rappel :**
+
+* Le *clean price* est le prix coté (sans les coupons courus).
+* Le *dirty price* reflète la vraie valeur de marché que paierait un acheteur.
+
+---
+
+### 🔹 2. **Calcul des taux actuariels (yield) et courbe des taux**
+
+* Calcul du **yield to maturity** (taux de rendement actuariel) pour chaque obligation.
+* Construction de la **courbe des taux actuariels**.
+* Interprétation des résultats et **analyse des anomalies/irrégularités observées** (liées à l’illiquidité, coupons faibles, etc.).
+
+---
+
+### 🔹 3. **Lissage de la courbe des taux avec le modèle de Svensson**
+
+* Ajustement d’une **courbe de Svensson** (modèle paramétrique à 6 paramètres) à la courbe des taux observés.
+* Objectif : **minimiser l’erreur quadratique moyenne** entre les taux observés et ceux du modèle.
+* Utilisation d’**Excel Solver** pour ajuster les paramètres $(b_0, b_1, b_2, b_3, c_1, c_2)$.
+* Comparaison entre courbe observée et courbe lissée.
+
+---
+
+## 📦 **Outils utilisés**
+
+* **Excel** exclusivement pour les calculs de la partie 1 (intérêts courus, taux actuariels, ajustement Svensson).
+
+## **PARTIE 2**
 
 **Valuation with a tree – Évaluation d'un produit de rente variable avec garanties**
 
